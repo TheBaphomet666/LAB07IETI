@@ -1,5 +1,6 @@
 package com.Task.Taskplanner.Services;
 
+import com.Task.Taskplanner.Exceptions.TaskPlannerException;
 import com.Task.Taskplanner.Model.User;
 
 import java.util.List;
@@ -7,11 +8,11 @@ import java.util.List;
 public interface UserService {
     List<User> getUsersList();
 
-    User getUserById();
+    User getUserById(String id);
 
-    User createUser();
+    User createUser(String id, String username, String password,String fullName) throws TaskPlannerException;
 
-    User updateUser();
+    User updateUser(String id, String username, String password,String fullName);
 
-    void removeUser();
+    void removeUser(String id);
 }

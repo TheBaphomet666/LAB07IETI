@@ -4,23 +4,32 @@ import java.util.Date;
 
 public class Task {
 
-    private int Id;
+    private String Id;
     private String description;
     private Date expirationDate;
     private String status;
+    private User supervisor;
 
-    public Task(int id, String description, Date expirationDate, String status) {
+    public Task(String id, String description, Date expirationDate, String status) {
         Id = id;
         this.description = description;
         this.expirationDate = expirationDate;
         this.status = status;
     }
 
-    public int getId() {
+    public Task(String id, String description, Date expirationDate, String status, User supervisor) {
+        Id = id;
+        this.description = description;
+        this.expirationDate = expirationDate;
+        this.status = status;
+        this.supervisor = supervisor;
+    }
+
+    public String getId() {
         return Id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         Id = id;
     }
 
@@ -46,5 +55,13 @@ public class Task {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public User getSupervisor() {
+        return supervisor;
+    }
+
+    public void setSupervisor(User supervisor) {
+        this.supervisor = supervisor;
     }
 }
